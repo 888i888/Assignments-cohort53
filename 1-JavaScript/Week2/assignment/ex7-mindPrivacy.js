@@ -36,7 +36,6 @@ function filterPrivateData(data) {
     email,
   }));
 }
-
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
   console.log('Test 1: filterPrivateData should take one parameter');

@@ -53,7 +53,13 @@ function main() {
 
   const locations = ['Amsterdam', 'Berlin', 'London', 'Paris', 'New York'];
 
-  const jobTitles = ['sale', 'developer', 'coder', 'logistic', 'manager'];
+  const jobTitles = [
+    'salesperson',
+    'developer',
+    'coder',
+    'logistic',
+    'manager',
+  ];
 
   console.log(tellFortune(numKids, partnerNames, locations, jobTitles));
   console.log(tellFortune(numKids, partnerNames, locations, jobTitles));

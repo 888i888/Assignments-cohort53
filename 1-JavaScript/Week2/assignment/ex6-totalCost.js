@@ -25,6 +25,7 @@ const cartForParty = {
   nuts: 2.2,
   bread: 1.44,
   meat: 3.8,
+};
 
 function calculateTotalPrice(cart) {
   let total = 0;
@@ -32,6 +33,7 @@ function calculateTotalPrice(cart) {
     total += cart[item];
   }
   return `Total: €${total.toFixed(2)}`;
+}
 
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
@@ -43,7 +45,6 @@ function test1() {
     `Expected ${expected}, but got ${actual}`
   );
   console.log('Test 1 passed');
- 
 }
 
 function test2() {
@@ -55,9 +56,7 @@ function test2() {
     `Expected ${expected}, but got ${actual}`
   );
   console.log('Test 2 passed');
-
 }
-
 function test() {
   test1();
   test2();

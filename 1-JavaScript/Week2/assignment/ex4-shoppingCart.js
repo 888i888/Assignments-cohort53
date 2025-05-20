@@ -20,7 +20,7 @@ const shoppingCart = ['bananas', 'milk'];
 
 // ! Function to be tested
 function addToShoppingCart(grocery) {
-  if (grocery !== undefined) {
+  if (typeof grocery === 'string') {
     shoppingCart.push(grocery);
   }
 

@@ -22,7 +22,6 @@ function addToShoppingCart(cart, grocery) {
   }
   return newCart;
 }
-
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
   console.log('Test 1: addToShoppingCart should take two parameters');

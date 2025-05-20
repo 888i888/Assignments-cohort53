@@ -36,7 +36,7 @@ export function giveCompliment(name) {
 }
 
 function main() {
-  const myName = 'HackYourFuture';
+  const myName = 'Igor';
 
   console.log(giveCompliment(myName));
   console.log(giveCompliment(myName));
