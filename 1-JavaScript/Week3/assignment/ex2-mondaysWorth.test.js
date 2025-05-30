@@ -31,9 +31,7 @@ const mondayTasks = [
 const hourlyRate = 25;
 
 function computeEarnings(tasks, hourlyRate) {
-  const totalMinutes = tasks
-    .map((task) => task.duration) // Extract durations from tasks
-    .reduce((total, duration) => total + duration, 0); // Sum up durations
+  const totalMinutes = tasks.reduce((total, duration) => total + duration, 0); // Sum up durations
   const totalHours = totalMinutes / 60; // Convert total minutes to hours
   const totalEarnings = totalHours * hourlyRate; // Calculate total earnings
   return `€${totalEarnings.toFixed(2)}`; // Format as Euro amount
