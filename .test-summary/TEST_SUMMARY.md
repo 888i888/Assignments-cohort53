@@ -7,7 +7,7 @@
 |          Exercise          | Passed | Failed | ESLint |
 |----------------------------|--------|--------|--------|
 | ex1-doubleEvenNumbers.test |   1    |   -    |   ✓    |
-| ex2-mondaysWorth.test      |   2    |   -    |   ✓    |
+| ex2-mondaysWorth.test      |   1    |   1    |   ✓    |
 | ex3-lemonAllergy.test      |   3    |   -    |   ✓    |
 | ex4-observable             |   3    |   -    |   ✓    |
 | ex5-wallet                 |   5    |   -    |   ✓    |

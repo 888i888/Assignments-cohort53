@@ -1,14 +1,3 @@
-/*------------------------------------------------------------------------------
-Full description atL https://github.com/HackYourFuture/Assignments/tree/main/1-JavaScript/Week4#exercise-2-whats-your-monday-worth
-
-- Complete the function names `computeEarnings`. It should take an array of
-  tasks and an hourly rate as arguments and return a formatted Euro amount
-  (e.g: `€11.34`) comprising the total earnings.
-- Use the `map` array function to take out the duration time for each task.
-- Multiply each duration by a hourly rate for billing and sum it all up.
-- Make sure the program can be used on any array of objects that contain a
-  `duration` property with a number value.
-------------------------------------------------------------------------------*/
 const mondayTasks = [
   {
     name: 'Daily standup',
@@ -31,23 +20,18 @@ const mondayTasks = [
 const hourlyRate = 25;
 
 function computeEarnings(tasks, hourlyRate) {
-  const totalMinutes = tasks.reduce((total, duration) => total + duration, 0); // Sum up durations
-  const totalHours = totalMinutes / 60; // Convert total minutes to hours
-  const totalEarnings = totalHours * hourlyRate; // Calculate total earnings
-  return `€${totalEarnings.toFixed(2)}`; // Format as Euro amount
+  // Use a single reduce to validate and sum durations
+  const totalMinutes = tasks.reduce((sum, task) => {
+    if (typeof task.duration === 'number' && isFinite(task.duration)) {
+      return sum + task.duration;
+    }
+    return sum; // Skip invalid tasks
+  }, 0);
+
+  const totalHours = totalMinutes / 60;
+  const totalEarnings = totalHours * hourlyRate;
+  return `€${totalEarnings.toFixed(2)}`;
 }
 
-// ! Unit tests (using Jest)
-describe('js-wk3-mondaysWorth', () => {
-  test('computeEarnings should take two parameters', () => {
-    // The `.length` property indicates the number of parameters expected by
-    // the function.
-    expect(computeEarnings).toHaveLength(2);
-  });
 
-  test('computeEarnings should compute the earnings as a formatted Euro amount', () => {
-    const result = computeEarnings(mondayTasks, hourlyRate);
-    const expected = '€187.50';
-    expect(result).toBe(expected);
-  });
-});
+console.log(computeEarnings(mondayTasks, hourlyRate));
