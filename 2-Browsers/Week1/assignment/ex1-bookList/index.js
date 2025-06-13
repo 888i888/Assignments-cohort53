@@ -16,9 +16,38 @@ https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
 
 -----------------------------------------------------------------------------*/
 //cspell: enable
-
 function createBookList(books) {
-  // TODO your code goes in here, return the ul element
+  function titleToFileName(title) {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9 ]/g, '')
+      .replace(/ /g, '_');
+  }
+
+  const ul = document.createElement('ul');
+  ul.classList.add('book-list');
+
+  books.forEach((book) => {
+    const li = document.createElement('li');
+    li.classList.add('book-item');
+    li.style.backgroundColor = book.alreadyRead ? 'green' : 'red';
+
+    const img = document.createElement('img');
+    img.classList.add('book-cover');
+    const fileName = titleToFileName(book.title) + '.jpg';
+    img.src = `assets/${fileName}`;
+    img.alt = book.title;
+
+    const info = document.createElement('p');
+    info.classList.add('book-info');
+    info.textContent = `${book.title} by ${book.author}`;
+
+    li.appendChild(img);
+    li.appendChild(info);
+    ul.appendChild(li);
+  });
+
+  return ul;
 }
 
 function main() {
@@ -44,7 +73,7 @@ function main() {
   ];
 
   const ulElement = createBookList(myBooks);
-  document.querySelector('#bookList').appendChild(ulElement);
+  document.getElementById('bookList').appendChild(ulElement);
 }
 
 window.addEventListener('load', main);
