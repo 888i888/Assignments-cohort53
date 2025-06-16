@@ -10,7 +10,7 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
 const myInfo = {
   nickname: 'Igor',
-  'fav-food': 'Pizza',
+  favFood: 'Pizza',
   hometown: 'Kyiv',
 };
 
@@ -21,7 +21,7 @@ Object.entries(myInfo).forEach(([id, value]) => {
   }
 });
 
-const listItems = document.querySelectorAll('ul li');
-listItems.forEach((li) => {
-  li.classList.add('list-item');
+const listItems = document.querySelectorAll('li');
+listItems.forEach((item) => {
+  item.classList.add('list-item');
 });

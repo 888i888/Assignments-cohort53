@@ -24,13 +24,14 @@ const cat = document.querySelector('img');
 cat.style.left = '0px';
 
 let catPosition = 0;
-const screenWidth = window.innerWidth;
 const catWidth = 296;
-const middle = Math.floor((screenWidth - catWidth) / 2);
 let isDancing = false;
 
 function catWalk() {
   if (isDancing) return;
+
+  const screenWidth = window.innerWidth;
+  const middle = (screenWidth - catWidth) / 2;
 
   catPosition += 10;
   cat.style.left = `${catPosition}px`;

@@ -7,7 +7,9 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
    HackYourFuture logo instead.
 ------------------------------------------------------------------------------*/
 function hijackGoogleLogo() {
-  const logo = document.querySelector('img[alt="Google"]');
+  const logo =
+    document.getElementById('hplogo') ||
+    document.querySelector('img[alt="Google"]');
   if (logo) {
     logo.src =
       'https://upload.wikimedia.org/wikipedia/commons/8/8d/HackYourFuture_Logo.png';
