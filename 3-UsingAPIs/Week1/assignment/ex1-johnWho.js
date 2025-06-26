@@ -7,18 +7,18 @@ Rewrite this function, but replace the callback syntax with the Promise syntax:
 - If the Promise `rejects`, pass an error as the argument to reject with: "You 
   didn't pass in a first name!"
 ------------------------------------------------------------------------------*/
-// TODO see above
+
 export const getAnonName = (firstName) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (!firstName) {
-        callback(new Error("You didn't pass in a first name!"));
+        reject(new Error("You didn't pass in a first name!"));
         return;
       }
 
       const fullName = `${firstName} Doe`;
 
-      callback(fullName);
+      resolve(fullName);
     }, 1000);
   });
 };
